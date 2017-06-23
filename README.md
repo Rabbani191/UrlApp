@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # UrlShortenedApp
 URL Shortner App
 #Project Installation
@@ -49,3 +50,7 @@ OAuth 2.0 implementation for private and unique Urls:
 
 Expiration period for Url:
   Same issue as the above still looking for it that just need to take more time to reach to a logical decision.
+=======
+# UrlShorttener
+Used for url
+>>>>>>> fdceda38c4a50c4c1aec8f28be6ae3815d23880f
