@@ -1,0 +1,61 @@
+<html lang="en" ng-app="urlApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Frame-Options" content="allow">
+  <title>Short URL APP</title>
+
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/angular/angular-csp.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+<head>
+<body ng-controller="mainController">
+  <div class="fluid-container">
+    <h2 class='mainHeading'>URL Shortener App</h2>
+    <div class="mycontainer">
+      <div class="row">
+        <br>
+        <form  ng-submit="shortUrl()" >
+          <div class="form-group">
+            <h3>Make Url Easy:</h3>
+            <input type="text" ng-model="OriginalUrl" class="form-control myInput" placeholder="Enter Your Orginal Url" required="">
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LcFgyYUAAAAAGKPQEWW5iNAEcZpuzVbKTU817k9" required=""></div>
+         <br/>
+          <button type="submit" class="btn btn-default myButton">SHORTEN URL</button>
+        </form>
+
+      </div>
+    </div>
+    <div ng-show="loading" ng-cloak>
+      <img src="img/source2.gif" class="image" >
+    </div>
+    <div class="row myTab" ng-show="show &&!loading" ng-cloak>
+      <uib-tabset>
+        <h3 ng-show="show &&!loading" ng-cloak>{{iFrameUrl}}
+          <i ngclipboard data-clipboard-text={{iFrameUrl}} data-toggle="tooltip" title="copyLink" class='glyphicon glyphicon-link'></i>
+        </h3>
+        <a class="close" ng-click="cancel()">
+          <i class="glyphicon glyphicon-remove" style="margin-top:1px"></i>
+        </a>
+        <uib-tab heading="Website">
+          <div class="row-fluid" ng-include="'partial/website.html'"></div>
+        </uib-tab>
+        <!-- <uib-tab heading="Current Analaytics" >
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-include="'partial/modal.html'"></div> -->
+        </uib-tab>
+        <uib-tab heading="Visited Url"  ng-click="getUrlData()">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Urldatatab"  ng-include="'partial/analyGoogle.html'"></div>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
+  <script src="bower_components/ngclipboard/dist/ngclipboard.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="row mytable table-responsive scroller"  style="margin-top: 1%; height:400px ;overflow-y:auto;"width="100%" height="400">
+   <div class="col-md-12">
+     <table class="table table-striped table table-hover" >
+      <th class="header">Original Url</th>
+       <th class="header">Short Url<span style="color:red;font-size:10px"> (Click to View Analytics)</span></th>
+       <th class="header">Country</th>
+       <th class="header">Click Count</th>
+       <th></th>
+     <!-- <tr ng-repeat="x in books | filterBy:test:true" ng-show="test"> -->
+     <tr ng-repeat="x in urlData | orderBy : 'click'" ng-if="urlData.length >0" style="font-size:13px;color: #333">
+       <td style="color:#039be5;" ng-click='openLongWindow(x)'>{{ x.orginal}}</td>
+       <td style="color:#039be5;" ng-click='openShortWindow(x)' data-toggle="tooltip" title="Open Analysis">{{ x.short }}</td>
+       <td>{{ x.country }}</td>
+       <td>{{ x.click}}</td>
+      <td> <i  style="color:red;" ng-click="urlData.splice($index, 1)" data-toggle="tooltip" title="remove" class="glyphicon glyphicon-remove"></i>
+     </tr>
+   </table>
+   </div>
+ </div>
+</div>
