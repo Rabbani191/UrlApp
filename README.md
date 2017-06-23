@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # UrlShortenedApp
 URL Shortner App
 #Project Installation
@@ -47,10 +47,5 @@ BackEnd:
 OAuth 2.0 implementation for private and unique Urls:
   Created the Credentials for the client Id and secret Key .
   But Still looking for Api or module that how it will work for private connections.
-
 Expiration period for Url:
   Same issue as the above still looking for it that just need to take more time to reach to a logical decision.
-=======
-# UrlShorttener
-Used for url
->>>>>>> fdceda38c4a50c4c1aec8f28be6ae3815d23880f
